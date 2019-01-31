@@ -26,7 +26,7 @@ function fetchJson(path){
     console.log(colours);
 }
 
-fetch("./data.JSON")
+
 
 
 function processText(text){
