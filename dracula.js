@@ -27,11 +27,9 @@ function fetchJson(path){
 }
 
 
-
-
 function processText(text){
 
-    var res = text.split(" ");
+    var res = text.split(/\W+/);
     console.log(res);
 }
 
