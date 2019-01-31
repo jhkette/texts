@@ -7,7 +7,6 @@ function fetchText() {
   .then(response => response.text())
   .then(response =>  response.split(/\W+/))
   .then(results => text.push(results));
-
   return text;
 }
 
@@ -33,8 +32,11 @@ function findMatches(dracula, coloursArray){
 
 }
 
-console.log(fetchJson());
-console.log(fetchText());
+const colours = fetchJson();
+const finalText = fetchText();
+
+console.log(colours);
+console.log(finalText);
 
 
 function showText(responseAsText) {
