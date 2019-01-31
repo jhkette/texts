@@ -2,36 +2,40 @@ window.onload = function(){
 
 
 function fetchText() {
+  const text = [];
   fetch('dracula.txt')
-  .then(readResponseAsText)
-  .then(showText);
+  .then(response => response.text())
+  .then(response =>  response.split(/\W+/))
+  .then(results => text.push(results));
+
+  return text;
 }
+
 
 function fetchJson(){
     const colours = [];
     fetch('data.json')
     .then(res => res.json())
     .then(results => colours.push(...results));
-
     return colours;
 }
-var dracula = fetchText();
+
+
 var coloursArray = fetchJson();
 
 function processText(text){
 
     var res = text.split(/\W+/);
-    console.log(res);
+
 }
 
 function findMatches(dracula, coloursArray){
-    console.log(coloursArray);
+
 }
 
+console.log(fetchJson());
+console.log(fetchText());
 
-function readResponseAsText(response) {
-  return response.text();
-}
 
 function showText(responseAsText) {
 
@@ -40,7 +44,4 @@ function showText(responseAsText) {
   processText(responseAsText);
 }
 
-findMatches(dracula, coloursArray);
-
-
-};
+}
